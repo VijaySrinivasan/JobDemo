@@ -266,10 +266,10 @@
                     android:drawableTop="@drawable/mr_ic_settings_light"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:text="tbd3"
+                    android:text="Voice"
                     android:visibility="visible"
                     android:textColor="@color/formText"
-                    android:onClick="showInMap"/>
+                    android:onClick="voiceNavigation"/>
             </LinearLayout>
 
         </LinearLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">JobDemo</string>
+    <string name="purpose">The purpose of this app is to give myself some technical exercise!
+    This app was not created to solve a business problem.</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="title_activity_my_locator">MyLocatorActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_voice">VoiceActivity</string>
+    
+    <string name="preference_key_file">com.vijaysrini.jobdemo.preferences</string>
+    <string name="pref_sec1_show">yes</string>
+</resources>

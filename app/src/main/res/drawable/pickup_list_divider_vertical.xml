@@ -1,0 +1,6 @@
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/pickup_list_divider"
+    android:fromDegrees="90"
+    android:toDegrees="90" >
+
+</rotate>
