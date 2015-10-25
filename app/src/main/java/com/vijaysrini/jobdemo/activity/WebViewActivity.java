@@ -30,32 +30,14 @@ public class WebViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
 
-        urlText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
         webView = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
         webSettings.setUseWideViewPort(true);
-        webSettings.setUserAgentString("CVS_ANDROID_APP");
+        webSettings.setUserAgentString("my-user-agent");
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://cvs.com");
-        urlText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                boolean handled = false;
-                Log.i("onEditorAction","actionId =" + actionId);
-                /*if (actionId == EditorInfo.IME_ACTION_GO) {
-                    Log.i("onEditorAction","calling loadUrl.");
-                    loadUrl(v);
-                    handled = true;
-                }
-                return handled;*/
-                loadUrl(v);
-                return true;
-            }
-        });
-
+        webView.loadUrl("http://www.citizensbank.com");
     }
 
 
@@ -72,12 +54,10 @@ public class WebViewActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
