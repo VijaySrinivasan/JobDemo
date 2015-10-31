@@ -255,7 +255,7 @@
                     android:drawableTop="@drawable/mr_ic_play_light"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:text="tbd1"
+                    android:text="Long Sync"
                     android:textColor="@color/formText"
                     android:onClick="createNotification"
                     android:id="@+id/tbd1" />
