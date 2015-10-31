@@ -243,7 +243,7 @@
                     android:drawableTop="@drawable/mr_ic_settings_light"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:text="Save in\ndevice"
+                    android:text="Save on\ndevice"
                     android:textAlignment="center"
                     android:textColor="@color/formText"
                     android:onClick="showWebView"
