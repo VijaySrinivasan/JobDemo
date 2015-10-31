@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <color name="white">#FFFFFF</color>
+    <color name="dark_grey">#333333</color>
+    <color name="app_background">#E0EBEB</color>
+    <color name="headerRed">#ca0814</color>
+    <color name="section_blue">#1dbdef</color>
+    <color name="orange">#ef622e</color>
+    <color name="transparent">#00000000</color>
+    <color name="my_red">#ffff4444</color>
+    <color name="olive_green">#ff006666</color>
+</resources>

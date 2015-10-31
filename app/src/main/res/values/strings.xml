@@ -15,4 +15,8 @@
     <string name="preference_key_file">com.vijaysrini.jobdemo.preferences</string>
     <string name="pref_sec1_show">yes</string>
     <string name="title_activity_async">AsyncTask Demonstrator</string>
+    <string name="title_activity_trial">TrialActivity</string>
+
+    <string name="default_web_url">https://m.chase.com</string>
+
 </resources>

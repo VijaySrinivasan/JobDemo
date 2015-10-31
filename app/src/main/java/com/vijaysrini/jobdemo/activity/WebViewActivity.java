@@ -37,7 +37,7 @@ public class WebViewActivity extends AppCompatActivity {
         webSettings.setUseWideViewPort(true);
         webSettings.setUserAgentString("my-user-agent");
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://www.citizensbank.com");
+        webView.loadUrl(getResources().getString(R.string.default_web_url).toString());
     }
 
 

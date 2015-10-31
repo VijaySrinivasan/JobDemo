@@ -4,27 +4,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.vijaysrini.jobdemo.R;
 
-public class AsyncActivity extends AppCompatActivity {
+public class TrialActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_async);
-    }
-
-    public void retrieveComments(View view) {
-        // 1. Create a HTTPCLient, HTTPGet, HTTPResponse, InputStream, BufferedReadder
-
+        setContentView(R.layout.activity_trial);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_async, menu);
+        getMenuInflater().inflate(R.menu.menu_trial, menu);
         return true;
     }
 
