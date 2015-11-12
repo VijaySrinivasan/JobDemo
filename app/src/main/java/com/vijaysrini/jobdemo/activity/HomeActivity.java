@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home2);
+        setContentView(R.layout.activity_home);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         sec1Layout = (LinearLayout) findViewById(R.id.sec1_buttons_area);
         pref_sec1_show  = getString(R.string.pref_sec1_show);
@@ -84,17 +84,32 @@ public class HomeActivity extends AppCompatActivity{
         Log.i("MyNotification", "done calling MyNotification");
     }
 
-    public void showWebView(MenuItem menuItem) {
+    public void showMobileWebInvesting(MenuItem menuItem) {
         Log.i(logtag, "Showing WebView on menu tap");
         Intent nextAction = new Intent(this,WebViewActivity.class);
         startActivity(nextAction);
     }
-    public void showWebView(View view) {
-        Log.i(logtag, "Showing WebView on icon tap");
+
+    public void showMobileWebInvesting(View view) {
+        Log.i(logtag, "Showing MobileWebHome on icon tap");
         Intent nextAction = new Intent(this,WebViewActivity.class);
+        nextAction.putExtra("url",getResources().getString(R.string.cb_web_invest_url).toString());
         startActivity(nextAction);
     }
 
+    public void showAngularExample (View view) {
+        Log.i(logtag, "Showing AngularExample on icon tap");
+        Intent nextAction = new Intent(this,WebViewActivity.class);
+        nextAction.putExtra("url",getResources().getString(R.string.myangular_example_url).toString());
+        startActivity(nextAction);
+    }
+
+    public void showCards (View view) {
+        Log.i(logtag, "Showing Cards on icon tap");
+        Intent nextAction = new Intent(this,WebViewActivity.class);
+        nextAction.putExtra("url",getResources().getString(R.string.cb_web_cards_url).toString());
+        startActivity(nextAction);
+    }
 
     public void showInMap (View view) {
         Log.i(logtag, "Starting showInMap");

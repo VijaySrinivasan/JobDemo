@@ -2,20 +2,15 @@ package com.vijaysrini.jobdemo.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.AndroidCharacter;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AutoCompleteTextView;
-import android.widget.TextView;
 
 import com.vijaysrini.jobdemo.R;
 
@@ -37,7 +32,8 @@ public class WebViewActivity extends AppCompatActivity {
         webSettings.setUseWideViewPort(true);
         webSettings.setUserAgentString("my-user-agent");
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl(getResources().getString(R.string.default_web_url).toString());
+        Log.i("Webview onCreate", "url is " + getIntent().getStringExtra("url"));
+        webView.loadUrl(getIntent().getStringExtra("url"));
     }
 
 

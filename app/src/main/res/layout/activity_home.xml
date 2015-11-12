@@ -1,26 +1,352 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.vijaysrini.jobdemo.activity.MyLocatorActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:clickable="true"
+    android:fadingEdge="none">
+    <LinearLayout
+        android:id="@+id/top_1_layout_with_grey_background"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/purpose"
-        android:id="@+id/text_purpose"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btn_notification"
-        android:text="Create Notification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_purpose"
-        android:layout_centerHorizontal="true"
-        android:onClick="createNotification"/>
+        <LinearLayout
+            android:id="@+id/top_2_layout_with_white_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical" >
 
-</RelativeLayout>
+            <!--SECTION 1-->
+            <LinearLayout
+                android:id="@+id/sec1_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/olive_green"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/hs1_title_link"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:text="Section 1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/arrow_icon_white"
+                    android:paddingRight="10dp"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:text="Hide/Expand"
+                    android:onClick="hideExpandSection1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/sec1_buttons_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/long_text_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="Start service to monitor power supply"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/mr_ic_play_light" />
+            </LinearLayout>
+
+            <!-- section 2 start -->
+            <LinearLayout
+                android:id="@+id/section2Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/olive_green"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/hs_section2_Title"
+                    android:text="Web Views"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/hs_section2_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/arrow_icon_white"
+                    android:paddingRight="10dp"
+                    android:text="more_nav"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/sect2_button_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp"
+                android:background="@color/white"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/mr_ic_play_light"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Start\nInvesting"
+                    android:textAlignment="center"
+                    android:onClick="showMobileWebInvesting"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/mr_ic_settings_light"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="Credit\nCards"
+                    android:onClick="showCards"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/mr_ic_play_light"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="Angular\nExample"
+                    android:visibility="visible"
+                    android:onClick="showAngularExample"/>
+            </LinearLayout>
+
+            <!--SECTION 2.5  to show progess bar -->
+            <RelativeLayout
+                android:id="@+id/rlLoadingProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:visibility="gone" >
+
+                <ProgressBar
+                    android:id="@+id/progressBarLoading"
+                    style="?android:attr/progressBarStyleInverse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="20dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/progressBarLoading"
+                    android:background="@drawable/pickup_list_divider"
+                    android:layerType="software" />
+            </RelativeLayout>
+
+            <!-- section 3 start -->
+            <LinearLayout
+                android:id="@+id/section3Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/olive_green"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/hs_section3_Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:text="Section 3"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/hs_section3_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/arrow_icon_white"
+                    android:paddingRight="10dp"
+                    android:text="more_nav"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/sect3_button_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp"
+                android:background="@color/white"
+                android:weightSum="3" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/mr_ic_settings_light"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Save in\ndevice"
+                    android:textAlignment="center"
+                    android:onClick="showMobileWebInvesting"
+                     />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/mr_ic_play_light"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="Create\nNotification"
+                    android:onClick="createNotification"
+                     />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/mr_ic_settings_light"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="Voice"
+                    android:visibility="visible"
+                    android:onClick="voiceNavigation"/>
+            </LinearLayout>
+
+            <!-- section 4 start -->
+            <LinearLayout
+                android:id="@+id/section4Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/olive_green"
+                android:orientation="horizontal" >
+                <TextView
+                    android:text="Section 4"
+                    android:id="@+id/hs_section4_Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/hs_section4_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/arrow_icon_white"
+                    android:paddingRight="10dp"
+                    android:text="more_nav"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/sect4_button_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp"
+                android:background="@color/white"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/mr_ic_settings_light"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Save in\ndevice"
+                    android:textAlignment="center"
+                    android:onClick="showMobileWebInvesting"
+                    android:id="@+id/save_in_device" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/mr_ic_play_light"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="Create\nNotification"
+                    android:onClick="createNotification"
+                    android:id="@+id/tbd1" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/mr_ic_settings_light"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="See\nMap"
+                    android:visibility="visible"
+                    android:onClick="showInMap"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hs_helpfulHints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="15dp"
+            android:text="@string/purpose" />
+    </LinearLayout>
+        <!-- All sections are over. Text to show app purpose. -->
+
+</ScrollView>

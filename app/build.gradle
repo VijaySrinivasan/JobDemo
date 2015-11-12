@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+    }
     compileSdkVersion 23
     buildToolsVersion "21.1.2"
     defaultConfig {
         applicationId "com.vijaysrini.jobdemo"
         minSdkVersion 17
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.3"
     }
     buildTypes {
         release {

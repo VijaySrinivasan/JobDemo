@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">JobDemo</string>
-    <string name="purpose">The purpose of this app is to give myself some technical exercise!
-    This app was not created to solve a business problem.</string>
+    <string name="purpose">The purpose of this app is to give myself some technical exercise! This app was not created to solve a business problem.</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_web_view">WebViewActivity</string>
     <string name="title_activity_my_locator">MyLocatorActivity</string>
@@ -17,6 +16,10 @@
     <string name="title_activity_async">AsyncTask Demonstrator</string>
     <string name="title_activity_trial">TrialActivity</string>
 
-    <string name="default_web_url">https://m.chase.com</string>
+    <string name="chase_web_url">https://m.chase.com</string>
+    <string name="cb_web_home_url">https://m.citizensbank.com</string>
+    <string name="cb_web_cards_url">https://www.citizensbank.com/cards-and-rewards/credit-cards.aspx</string>
+    <string name="cb_web_invest_url">https://www.citizensbank.com/investing/</string>
+    <string name="myangular_example_url">http://embed.plnkr.co/ss2K0CaLWUHAuberhNpH/preview</string>
 
 </resources>

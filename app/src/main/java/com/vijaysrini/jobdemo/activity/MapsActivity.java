@@ -9,6 +9,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.vijaysrini.jobdemo.R;
 
+import java.io.IOException;
+
 public class MapsActivity extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
@@ -60,8 +62,23 @@ public class MapsActivity extends FragmentActivity {
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+        MarkerOptions marker = new MarkerOptions();
+        marker.title("Vijay's Home");
+        marker.position(new LatLng(42.058818, -71.390501));
+        mMap.addMarker(marker);
+
         mMap.setMyLocationEnabled(true);
-        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+        /*Get office address
+        double lat;
+        double lng;
+        List<android.location.Address> geocodeMatches = null;
+        try {geoCode
+
+        } catch (IOException) {
+
+        }*/
+
     }
 }
