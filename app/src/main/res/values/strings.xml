@@ -20,6 +20,6 @@
     <string name="cb_web_home_url">https://m.citizensbank.com</string>
     <string name="cb_web_cards_url">https://www.citizensbank.com/cards-and-rewards/credit-cards.aspx</string>
     <string name="cb_web_invest_url">https://www.citizensbank.com/investing/</string>
-    <string name="myangular_example_url">http://embed.plnkr.co/ss2K0CaLWUHAuberhNpH/preview</string>
+    <string name="myangular_example_url">http://run.plnkr.co/plunks/ss2K0CaLWUHAuberhNpH/##userDetails</string>
 
 </resources>
