@@ -1,7 +1,7 @@
 package com.vijaysrini.jobdemo.model;
 
 /**
- * Created by vijaysrinivasan on 10/3/15.
+ * Created by vijaysrinivasan on 10/30/15.
  */
 public class Address {
     public Address() {

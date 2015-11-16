@@ -13,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.AutoCompleteTextView;
 
 import com.vijaysrini.jobdemo.R;
+import com.vijaysrini.jobdemo.service.WebAppInterface;
 
 
 public class WebViewActivity extends AppCompatActivity {
@@ -26,11 +27,14 @@ public class WebViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_web_view);
 
         webView = (WebView) findViewById(R.id.webView);
+        webView.addJavascriptInterface(new WebAppInterface(this),"Android");
+
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
         webSettings.setUseWideViewPort(true);
         webSettings.setUserAgentString("my-user-agent");
+
         webView.setWebViewClient(new WebViewClient());
         Log.i("Webview onCreate", "url is " + getIntent().getStringExtra("url"));
         webView.loadUrl(getIntent().getStringExtra("url"));
@@ -63,4 +67,5 @@ public class WebViewActivity extends AppCompatActivity {
         inputMethodManager.hideSoftInputFromInputMethod(v.getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
         webView.loadUrl(urlText.getText().toString());
     }
+
 }
