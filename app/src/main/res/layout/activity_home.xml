@@ -232,9 +232,9 @@
                     android:drawableTop="@drawable/mr_ic_settings_light"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:text="Save in\ndevice"
+                    android:text="Locate\nStore"
                     android:textAlignment="center"
-                    android:onClick="showMobileWebInvesting"
+                    android:onClick="showInMap"
                      />
                 <TextView
                     android:layout_width="wrap_content"
@@ -253,9 +253,10 @@
                     android:drawableTop="@drawable/mr_ic_settings_light"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:text="Voice"
+                    android:text="Voice\nCommand"
                     android:visibility="visible"
-                    android:onClick="voiceNavigation"/>
+                    android:onClick="voiceNavigation"
+                    />
             </LinearLayout>
 
             <!-- section 4 start -->
@@ -267,7 +268,7 @@
                 android:background="@color/olive_green"
                 android:orientation="horizontal" >
                 <TextView
-                    android:text="Section 4"
+                    android:text="Network Actions"
                     android:id="@+id/hs_section4_Title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -291,47 +292,72 @@
                     android:textColor="@color/white"
                     android:textSize="15sp" />
             </LinearLayout>
-            <LinearLayout
+            <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/scrollViewForNetw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_background"
+                android:clickable="true"
+                android:fadingEdge="none"
+                android:fillViewport="true">
+
+                <LinearLayout
                 android:id="@+id/sect4_button_area"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
                 android:paddingBottom="5dp"
-                android:background="@color/white"
-                android:weightSum="3" >
+                android:background="@color/white">
+                    <TextView
+                        android:layout_width ="0dp"
+                        android:minWidth="100dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/mr_ic_settings_light"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="Retrieve\njson"
+                        android:textAlignment="center"
+                        android:onClick="#"
+                        android:id="@+id/save_in_device" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:minWidth="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/mr_ic_play_light"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Background\nSync"
+                        android:onClick="createNotification"
+                        android:id="@+id/tbd1" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:minWidth="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/mr_ic_settings_light"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Post\nXML"
+                        android:visibility="visible"
+                        android:onClick="createNotification≈"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:minWidth="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/mr_ic_settings_light"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Parse\nXML"
+                        android:visibility="visible"
+                        android:onClick="createNotification≈"
+                        />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/mr_ic_settings_light"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:text="Save in\ndevice"
-                    android:textAlignment="center"
-                    android:onClick="showMobileWebInvesting"
-                    android:id="@+id/save_in_device" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/mr_ic_play_light"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:text="Create\nNotification"
-                    android:onClick="createNotification"
-                    android:id="@+id/tbd1" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/mr_ic_settings_light"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:text="See\nMap"
-                    android:visibility="visible"
-                    android:onClick="showInMap"/>
-            </LinearLayout>
+            </HorizontalScrollView>
 
         </LinearLayout>
 
