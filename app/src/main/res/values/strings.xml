@@ -21,5 +21,20 @@
     <string name="cb_web_cards_url">https://www.citizensbank.com/cards-and-rewards/credit-cards.aspx</string>
     <string name="cb_web_invest_url">https://www.citizensbank.com/investing/</string>
     <string name="myangular_example_url">http://run.plnkr.co/plunks/ss2K0CaLWUHAuberhNpH/##userDetails</string>
+    <string name="title_activity_get_json">GetJsonActivity</string>
+
+    <string name="appsettings">https://jsonblob.com/api/jsonBlob/56102fbae4b01190df3a816e</string>
+    <string name="readtimeout">10000</string>
+    <string name="conntimeout">10000</string>
+
+
+    <!--Download Activity -->
+    <string name="title_activity_download">Download</string>
+    <string name="download">Download Image</string>
+    <string name="resetImage">Reset Image</string>
+    <string name="defaultURL">http://www.dre.vanderbilt.edu/~schmidt/ka.png</string>
+    <string name="location">Enter URL:</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
 
 </resources>

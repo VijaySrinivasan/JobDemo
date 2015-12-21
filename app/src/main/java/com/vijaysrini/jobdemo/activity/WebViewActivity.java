@@ -13,7 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.AutoCompleteTextView;
 
 import com.vijaysrini.jobdemo.R;
-import com.vijaysrini.jobdemo.service.WebAppInterface;
+import com.vijaysrini.jobdemo.common.WebAppInterface;
 
 
 public class WebViewActivity extends AppCompatActivity {

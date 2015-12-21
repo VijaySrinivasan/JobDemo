@@ -1,7 +1,8 @@
-package com.vijaysrini.jobdemo.service;
+package com.vijaysrini.jobdemo.common;
 
 /**
  * Created by vijaysrinivasan on 11/15/15.
+ * This is the singleton that has the application settings.
  */
 public class Settings {
     private static Settings ourInstance = new Settings();

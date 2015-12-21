@@ -1,4 +1,4 @@
-package com.vijaysrini.jobdemo.service;
+package com.vijaysrini.jobdemo.common;
 
 import android.content.Context;
 import android.webkit.JavascriptInterface;

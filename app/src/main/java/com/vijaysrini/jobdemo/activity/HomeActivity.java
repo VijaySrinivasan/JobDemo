@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.vijaysrini.jobdemo.R;
-import com.vijaysrini.jobdemo.service.MyNotification;
+import com.vijaysrini.jobdemo.common.MyNotification;
 
 public class HomeActivity extends AppCompatActivity{
 
@@ -84,6 +84,18 @@ public class HomeActivity extends AppCompatActivity{
         Log.i("MyNotification", "done calling MyNotification");
     }
 
+    public void getAppSettings(View view) {
+        Log.d(logtag, "getAppSettings");
+        Intent nextAction = new Intent(this,FormSubmissionActivity.class);
+        startActivity(nextAction);
+    }
+
+    public void formSubmission(View view) {
+        Log.d(logtag,"formSubmission");
+        Intent nextAction = new Intent(this,FormSubmissionActivity.class);
+        startActivity(nextAction);
+    }
+
     public void showMobileWebInvesting(MenuItem menuItem) {
         Log.i(logtag, "Showing WebView on menu tap");
         Intent nextAction = new Intent(this,WebViewActivity.class);
@@ -116,6 +128,13 @@ public class HomeActivity extends AppCompatActivity{
         Intent nextAction = new Intent(this,MapsActivity.class);
         startActivity(nextAction);
     }
+
+    public void backgroundSync(View view) {
+        Log.i("backgroundSync", "calling DownloadActivity");
+        Intent nextAction = new Intent(this,DownloadActivity.class);
+        startActivity(nextAction);
+    }
+
 
     public void hideExpandSection1 (View view) {
         SharedPreferences.Editor editor = preferences.edit();
