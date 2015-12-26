@@ -11,8 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vijaysrini.jobdemo.R;
+import com.vijaysrini.jobdemo.common.AppSingleton;
 import com.vijaysrini.jobdemo.common.Network;
 import com.vijaysrini.jobdemo.common.RestTask;
+
+import org.json.JSONObject;
 
 public class FormSubmissionActivity extends AppCompatActivity implements RestTask.ProgressCallback,RestTask.ResponseCallback{
 
@@ -23,6 +26,15 @@ public class FormSubmissionActivity extends AppCompatActivity implements RestTas
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_submission);
+
+        //Check whether you can read from app singleton
+        AppSingleton myapp = (AppSingleton) getApplication();
+        JSONObject settingsJson = myapp.getAppSettingJson();
+        if (settingsJson != null) {
+            TextView textView=  (TextView)  findViewById(R.id.textView);
+            textView.setText(settingsJson.toString());
+        }
+
     }
 
     @Override
@@ -50,7 +62,7 @@ public class FormSubmissionActivity extends AppCompatActivity implements RestTas
     public void getAppSettings(View view) {
         try {
             Log.d(TAG,"Starting getAppSettings");
-            String appsettingURL = getResources().getString(R.string.appsettings).toString();
+            String appsettingURL = getResources().getString(R.string.appsettings_url).toString();
             RestTask getAppSettingsTask = Network.obtainGetTask(appsettingURL);
             if (getAppSettingsTask != null) {
                 getAppSettingsTask.setResponseCallback(this);

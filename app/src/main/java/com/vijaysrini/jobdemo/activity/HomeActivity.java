@@ -13,10 +13,11 @@ import android.widget.LinearLayout;
 
 import com.vijaysrini.jobdemo.R;
 import com.vijaysrini.jobdemo.common.MyNotification;
+import com.vijaysrini.jobdemo.service.RefreshAppSettings;
 
 public class HomeActivity extends AppCompatActivity{
 
-    private final String logtag = "HomeActivity";
+    private final String LOGTAG = "HomeActivity";
     private final int NOTIFICATION_ID = 1;
     LinearLayout sec1Layout;
     String pref_sec1_show;
@@ -27,6 +28,7 @@ public class HomeActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(LOGTAG, "onCreate starts");
         setContentView(R.layout.activity_home);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         sec1Layout = (LinearLayout) findViewById(R.id.sec1_buttons_area);
@@ -34,13 +36,11 @@ public class HomeActivity extends AppCompatActivity{
         prefFile = getString(R.string.preference_key_file);
         preferences = getSharedPreferences(prefFile, Context.MODE_PRIVATE);
         showSec1 = preferences.getString(pref_sec1_show, "default");
-        Log.i("onCreate", "pref_sec1_show in pref is " + showSec1);
 
         if (showSec1.compareTo("no") == 0) sec1Layout.setVisibility(View.GONE);
         else sec1Layout.setVisibility(View.VISIBLE);
 
         Log.i("onCreate","Sec1 button area's visibility is " + sec1Layout.getVisibility());
-
     }
 
 
@@ -61,13 +61,13 @@ public class HomeActivity extends AppCompatActivity{
         //noinspection SimplifiableIfStatement
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Log.i(logtag, "Menu setting was selected.");
+                Log.i(LOGTAG, "Menu setting was selected.");
                 return true;
             case R.id.menu_locator:
                 nextAction = new Intent(this,MyLocatorActivity.class);
                 return true;
             case R.id.menu_open_webview:
-                Log.i(logtag,"Menu Open WebView was selected.");
+                Log.i(LOGTAG,"Menu Open WebView was selected.");
                 nextAction = new Intent(this,WebViewActivity.class);
                 startActivity(nextAction);
                 return true;
@@ -85,54 +85,55 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void getAppSettings(View view) {
-        Log.d(logtag, "getAppSettings");
+        Log.d(LOGTAG, "getAppSettings");
         Intent nextAction = new Intent(this,FormSubmissionActivity.class);
         startActivity(nextAction);
     }
 
     public void formSubmission(View view) {
-        Log.d(logtag,"formSubmission");
+        Log.d(LOGTAG,"formSubmission");
         Intent nextAction = new Intent(this,FormSubmissionActivity.class);
         startActivity(nextAction);
     }
 
     public void showMobileWebInvesting(MenuItem menuItem) {
-        Log.i(logtag, "Showing WebView on menu tap");
+        Log.i(LOGTAG, "Showing WebView on menu tap");
         Intent nextAction = new Intent(this,WebViewActivity.class);
         startActivity(nextAction);
     }
 
     public void showMobileWebInvesting(View view) {
-        Log.i(logtag, "Showing MobileWebHome on icon tap");
+        Log.i(LOGTAG, "Showing MobileWebHome on icon tap");
         Intent nextAction = new Intent(this,WebViewActivity.class);
         nextAction.putExtra("url",getResources().getString(R.string.cb_web_invest_url).toString());
         startActivity(nextAction);
     }
 
     public void showAngularExample (View view) {
-        Log.i(logtag, "Showing AngularExample on icon tap");
+        Log.i(LOGTAG, "Showing AngularExample on icon tap");
         Intent nextAction = new Intent(this,WebViewActivity.class);
         nextAction.putExtra("url",getResources().getString(R.string.myangular_example_url).toString());
         startActivity(nextAction);
     }
 
     public void showCards (View view) {
-        Log.i(logtag, "Showing Cards on icon tap");
+        Log.i(LOGTAG, "Showing Cards on icon tap");
         Intent nextAction = new Intent(this,WebViewActivity.class);
         nextAction.putExtra("url",getResources().getString(R.string.cb_web_cards_url).toString());
         startActivity(nextAction);
     }
 
     public void showInMap (View view) {
-        Log.i(logtag, "Starting showInMap");
+        Log.i(LOGTAG, "Starting showInMap");
         Intent nextAction = new Intent(this,MapsActivity.class);
         startActivity(nextAction);
     }
 
+    // Calls the RefreshAppsettings service to save the appsettings to SharedPreference
     public void backgroundSync(View view) {
-        Log.i("backgroundSync", "calling DownloadActivity");
-        Intent nextAction = new Intent(this,DownloadActivity.class);
-        startActivity(nextAction);
+        Log.i(LOGTAG, "calling RefreshAppsettings");
+        Intent refreshAppSettings = new Intent(this,RefreshAppSettings.class);
+        startService(refreshAppSettings);
     }
 
 
@@ -150,7 +151,7 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void voiceNavigation (View view) {
-        Log.i(logtag,"voiceNavigation");
+        Log.i(LOGTAG,"voiceNavigation");
         Intent nextAction = new Intent(this,VoiceActivity.class);
         startActivity(nextAction);
     }

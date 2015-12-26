@@ -1,4 +1,4 @@
-package com.vijaysrini.jobdemo;
+package com.vijaysrini.jobdemo.common;
 
 import java.security.PublicKey;
 

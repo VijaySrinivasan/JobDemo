@@ -10,7 +10,6 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.vijaysrini.jobdemo.Constants;
 import com.vijaysrini.jobdemo.R;
 
 /**
@@ -34,7 +33,6 @@ public class MyNotification {
                 .setSubText(subText)
                 .setDefaults(Notification.DEFAULT_SOUND)
         ;
-        // .setLargeIcon(BitmapFactory.decodeResource(activity.getResources(), R.drawable.ic_cast_light))
 
         NotificationManager notificationManager = (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(NOTIFICATION_ID,builder.build());

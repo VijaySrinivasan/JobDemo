@@ -23,7 +23,7 @@
     <string name="myangular_example_url">http://run.plnkr.co/plunks/ss2K0CaLWUHAuberhNpH/##userDetails</string>
     <string name="title_activity_get_json">GetJsonActivity</string>
 
-    <string name="appsettings">https://jsonblob.com/api/jsonBlob/56102fbae4b01190df3a816e</string>
+    <string name="appsettings_url">https://jsonblob.com/api/jsonBlob/56102fbae4b01190df3a816e</string>
     <string name="readtimeout">10000</string>
     <string name="conntimeout">10000</string>
 
