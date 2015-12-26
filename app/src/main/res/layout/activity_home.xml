@@ -41,7 +41,7 @@
                     android:paddingTop="5dp"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    android:text="Section 1"/>
+                    android:text="Services"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -74,8 +74,8 @@
                     android:drawablePadding="10dp"
                     android:gravity="center_vertical"
                     android:paddingLeft="5dp"
-                    android:text="Start service to monitor power supply"
-                    android:textSize="25sp" />
+                    android:text="Start / stop service to monitor power supply"
+                    android:textSize="15sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -105,19 +105,6 @@
                     android:paddingTop="5dp"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
-                <TextView
-                    android:id="@+id/hs_section2_more"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:drawablePadding="10dp"
-                    android:drawableRight="@drawable/arrow_icon_white"
-                    android:paddingRight="10dp"
-                    android:text="more_nav"
-                    android:textAlignment="gravity"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/sect2_button_area"
@@ -200,22 +187,9 @@
                     android:paddingBottom="5dp"
                     android:paddingLeft="10dp"
                     android:paddingTop="5dp"
-                    android:text="Section 3"
+                    android:text="Location, Notification, Voice"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
-                <TextView
-                    android:id="@+id/hs_section3_more"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:drawablePadding="10dp"
-                    android:drawableRight="@drawable/arrow_icon_white"
-                    android:paddingRight="10dp"
-                    android:text="more_nav"
-                    android:textAlignment="gravity"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/sect3_button_area"
@@ -287,7 +261,7 @@
                     android:drawablePadding="10dp"
                     android:drawableRight="@drawable/arrow_icon_white"
                     android:paddingRight="10dp"
-                    android:text="more_nav"
+                    android:text="more"
                     android:textAlignment="gravity"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
@@ -306,8 +280,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
-                android:paddingBottom="5dp"
+                android:paddingBottom="20dp"
                 android:background="@color/white">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:minWidth="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/mr_ic_play_light"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Form\nSubmission"
+                        android:onClick="formSubmission"
+                        android:id="@+id/backgroundSync" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:minWidth="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/mr_ic_settings_light"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Download\nImage"
+                        android:visibility="visible"
+                        android:onClick="download"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:minWidth="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/mr_ic_settings_light"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Parse\nXML"
+                        android:visibility="visible"
+                        android:onClick="formSubmission"
+                        />
                     <TextView
                         android:layout_width ="0dp"
                         android:minWidth="100dp"
@@ -320,41 +329,7 @@
                         android:textAlignment="center"
                         android:onClick="getAppSettings"
                         android:id="@+id/save_in_device" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:minWidth="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawableTop="@drawable/mr_ic_play_light"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="Background\nSync"
-                        android:onClick="backgroundSync"
-                        android:id="@+id/backgroundSync" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:minWidth="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawableTop="@drawable/mr_ic_settings_light"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="Download\nImage"
-                        android:visibility="visible"
-                        android:onClick="formSubmission≈"
-                        />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:minWidth="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawableTop="@drawable/mr_ic_settings_light"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="Parse\nXML"
-                        android:visibility="visible"
-                        android:onClick="formSubmission≈"
-                        />
+
                 </LinearLayout>
 
             </HorizontalScrollView>
@@ -372,6 +347,7 @@
             android:paddingRight="10dp"
             android:paddingTop="15dp"
             android:text="@string/purpose" />
+
     </LinearLayout>
         <!-- All sections are over. Text to show app purpose. -->
 

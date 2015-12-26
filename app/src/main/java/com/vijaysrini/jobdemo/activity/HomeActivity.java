@@ -40,9 +40,8 @@ public class HomeActivity extends AppCompatActivity{
         if (showSec1.compareTo("no") == 0) sec1Layout.setVisibility(View.GONE);
         else sec1Layout.setVisibility(View.VISIBLE);
 
-        Log.i("onCreate","Sec1 button area's visibility is " + sec1Layout.getVisibility());
+        Log.i("onCreate", "Sec1 button area's visibility is " + sec1Layout.getVisibility());
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,8 +55,9 @@ public class HomeActivity extends AppCompatActivity{
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        Intent nextAction = null;
+        Log.d(LOGTAG,"onOptionsItemSelected starts");
 
+        Intent nextAction = null;
         //noinspection SimplifiableIfStatement
         switch (item.getItemId()) {
             case R.id.action_settings:
@@ -78,24 +78,20 @@ public class HomeActivity extends AppCompatActivity{
         }
     }
 
-    public void createNotification(View view) {
-        Log.i("MyNotification","calling MyNotification class");
-        MyNotification.createNotification(this, "text et al", "subtext et al");
-        Log.i("MyNotification", "done calling MyNotification");
+    public void hideExpandSection1 (View view) {
+        SharedPreferences.Editor editor = preferences.edit();
+        if (sec1Layout.getVisibility()==View.GONE) {
+            sec1Layout.setVisibility(View.VISIBLE);
+            editor.putString(pref_sec1_show, "yes");
+        } else {
+            sec1Layout.setVisibility(View.GONE);
+            editor.putString(pref_sec1_show, "no");
+        }
+        editor.commit();
+        Log.i("hideExpandSection1", "pref_sec1_show in preference is " + preferences.getString(pref_sec1_show, "default"));
     }
 
-    public void getAppSettings(View view) {
-        Log.d(LOGTAG, "getAppSettings");
-        Intent nextAction = new Intent(this,FormSubmissionActivity.class);
-        startActivity(nextAction);
-    }
-
-    public void formSubmission(View view) {
-        Log.d(LOGTAG,"formSubmission");
-        Intent nextAction = new Intent(this,FormSubmissionActivity.class);
-        startActivity(nextAction);
-    }
-
+    // Webview section methods
     public void showMobileWebInvesting(MenuItem menuItem) {
         Log.i(LOGTAG, "Showing WebView on menu tap");
         Intent nextAction = new Intent(this,WebViewActivity.class);
@@ -109,23 +105,49 @@ public class HomeActivity extends AppCompatActivity{
         startActivity(nextAction);
     }
 
-    public void showAngularExample (View view) {
-        Log.i(LOGTAG, "Showing AngularExample on icon tap");
-        Intent nextAction = new Intent(this,WebViewActivity.class);
-        nextAction.putExtra("url",getResources().getString(R.string.myangular_example_url).toString());
-        startActivity(nextAction);
-    }
-
     public void showCards (View view) {
         Log.i(LOGTAG, "Showing Cards on icon tap");
         Intent nextAction = new Intent(this,WebViewActivity.class);
-        nextAction.putExtra("url",getResources().getString(R.string.cb_web_cards_url).toString());
+        nextAction.putExtra("url", getResources().getString(R.string.cb_web_cards_url).toString());
         startActivity(nextAction);
     }
 
+    public void showAngularExample (View view) {
+        Log.i(LOGTAG, "Showing AngularExample on icon tap");
+        Intent nextAction = new Intent(this,WebViewActivity.class);
+        nextAction.putExtra("url", getResources().getString(R.string.myangular_example_url).toString());
+        startActivity(nextAction);
+    }
+
+    // SECTION : Map, Notification, voice
+
+    public void createNotification(View view) {
+        Log.i("MyNotification","calling MyNotification class");
+        MyNotification.createNotification(this, "text et al", "subtext et al");
+        Log.i("MyNotification", "done calling MyNotification");
+    }
     public void showInMap (View view) {
         Log.i(LOGTAG, "Starting showInMap");
         Intent nextAction = new Intent(this,MapsActivity.class);
+        startActivity(nextAction);
+    }
+
+    public void voiceNavigation (View view) {
+        Log.i(LOGTAG, "voiceNavigation");
+        Intent nextAction = new Intent(this,VoiceActivity.class);
+        startActivity(nextAction);
+    }
+
+    // SECTION: Background Tasks
+    public void formSubmission(View view) {
+        Log.d(LOGTAG, "formSubmission");
+        Intent nextAction = new Intent(this,FormSubmissionActivity.class);
+        startActivity(nextAction);
+    }
+
+    public void download(View view) {
+        Log.d(LOGTAG, "download");
+        Intent nextAction = new Intent(this,DownloadActivity.class);
         startActivity(nextAction);
     }
 
@@ -136,27 +158,4 @@ public class HomeActivity extends AppCompatActivity{
         startService(refreshAppSettings);
     }
 
-
-    public void hideExpandSection1 (View view) {
-        SharedPreferences.Editor editor = preferences.edit();
-        if (sec1Layout.getVisibility()==View.GONE) {
-            sec1Layout.setVisibility(View.VISIBLE);
-            editor.putString(pref_sec1_show, "yes");
-        } else {
-            sec1Layout.setVisibility(View.GONE);
-            editor.putString(pref_sec1_show, "no");
-        }
-        editor.commit();
-        Log.i("hideExpandSection1","pref_sec1_show in preference is " + preferences.getString(pref_sec1_show, "default") );
-    }
-
-    public void voiceNavigation (View view) {
-        Log.i(LOGTAG,"voiceNavigation");
-        Intent nextAction = new Intent(this,VoiceActivity.class);
-        startActivity(nextAction);
-    }
-
-    void showHideSections() {
-        return;
-    }
 }

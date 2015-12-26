@@ -51,7 +51,6 @@
             android:name=".activity.WebViewActivity"
             android:label="@string/title_activity_web_view"
             android:parentActivityName=".activity.HomeActivity" >
-
             <!-- meta data to support 4.0 and lowe -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -75,18 +74,24 @@
 
         <activity
             android:name=".activity.MapsActivity"
-            android:label="@string/title_activity_maps" >
+            android:label="@string/title_activity_maps"
+            android:parentActivityName=".activity.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.HomeActivity" />
         </activity>
+
+
         <activity
             android:name=".activity.VoiceActivity"
-            android:label="@string/title_activity_voice" >
+            android:label="@string/title_activity_voice"
+            android:parentActivityName=".activity.HomeActivity">
         </activity>
+
         <activity
             android:name=".activity.TrialActivity"
-            android:label="@string/title_activity_trial" >
+            android:label="@string/title_activity_trial"
+            android:parentActivityName=".activity.HomeActivity">
         </activity>
         <activity
             android:name=".activity.FormSubmissionActivity"
@@ -98,7 +103,8 @@
         </activity>
         <activity
             android:name=".activity.DownloadActivity"
-            android:label="@string/title_activity_download" >
+            android:label="@string/title_activity_download"
+            android:parentActivityName=".activity.HomeActivity">
         </activity>
 
         <service
