@@ -106,8 +106,7 @@ public class BBOpenActivity extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        final String item = (String) parent.getItemAtPosition(position);
-                        Log.d(LOGTAG, "Received a tap on " + item + " in the search result list");
+                        Log.d(LOGTAG, "Received a tap on item # " + position);
                     }
                 }
         );
