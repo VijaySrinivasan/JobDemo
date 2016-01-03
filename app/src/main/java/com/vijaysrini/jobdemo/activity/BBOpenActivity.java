@@ -143,7 +143,7 @@ public class BBOpenActivity extends AppCompatActivity {
         prodSearch.setAction(Constants.ACTION_SEARCH_PRODUCTS);
         startService(prodSearch);
         //progressDialog.show();
-        view.animate().setDuration(2000).alpha(0);
+        //view.animate().setDuration(2000).alpha(0);//hides the button that was clicked
 
     }
 }

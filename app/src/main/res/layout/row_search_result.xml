@@ -10,24 +10,24 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/text_bbp_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@+id/name"
+            android:text=""
             android:textSize="40px" >
         </TextView>
         <TextView
-            android:id="@+id/price"
+            android:id="@+id/text_bbp_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@+id/price"
+            android:text="@+id/text_bbp_price"
             android:textSize="20px" >
         </TextView>
         <TextView
-            android:id="@+id/sku"
+            android:id="@+id/text_bbp_sku"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@+id/sku"
+            android:text="sku"
             android:textSize="20px"
             android:visibility="gone">
         </TextView>

@@ -15,6 +15,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@color/white">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,7 +48,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Search"
-                    android:onClick="search"/>
+                    android:onClick="search"
+                    android:id="@+id/button_search"
+                    android:visibility="visible"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="fill_parent"

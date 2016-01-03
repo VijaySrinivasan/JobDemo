@@ -12,10 +12,7 @@ import android.widget.TextView;
 import com.vijaysrini.jobdemo.R;
 import com.vijaysrini.jobdemo.common.BBProduct;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by vijaysrinivasan on 1/1/16.
@@ -32,10 +29,8 @@ public class ProductListArrayAdapter extends ArrayAdapter <BBProduct>
         super(context, resource, searchResult);
         this.searchResult = searchResult;
         this.context = context;
-        Log.d("ProductListAdapter", "constructor ended with searchResult having " + searchResult.size() +" elements.");
+        Log.d("ProductListAdapter", "constructor ended with searchResult having " + searchResult.size() + " elements.");
     }
-
-
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -44,9 +39,9 @@ public class ProductListArrayAdapter extends ArrayAdapter <BBProduct>
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.row_search_result, parent, false);
 
-        TextView textName= (TextView) rowView.findViewById(R.id.name);
-        TextView textPrice = (TextView) rowView.findViewById(R.id.price);
-        TextView textSku = (TextView) rowView.findViewById(R.id.sku);
+        TextView textName= (TextView) rowView.findViewById(R.id.text_bbp_name);
+        TextView textPrice = (TextView) rowView.findViewById(R.id.text_bbp_price);
+        TextView textSku = (TextView) rowView.findViewById(R.id.text_bbp_sku);
         ImageView imageThumbnail = (ImageView) rowView.findViewById(R.id.icon);
 
         textName.setText((searchResult.get(position)).getName()) ;

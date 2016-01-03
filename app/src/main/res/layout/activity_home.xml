@@ -167,7 +167,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_below="@+id/progressBarLoading"
-                    android:background="@drawable/pickup_list_divider"
+                    android:background="@drawable/list_divider"
                     android:layerType="software" />
             </RelativeLayout>
 
