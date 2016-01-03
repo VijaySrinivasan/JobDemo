@@ -24,6 +24,9 @@
     <string name="title_activity_get_json">GetJsonActivity</string>
 
     <string name="appsettings_url">https://jsonblob.com/api/jsonBlob/56102fbae4b01190df3a816e</string>
+
+
+
     <string name="readtimeout">10000</string>
     <string name="conntimeout">10000</string>
 
@@ -36,5 +39,6 @@
     <string name="location">Enter URL:</string>
     <string name="help">Help</string>
     <string name="about">About</string>
+    <string name="title_activity_bbopen">BBOpenActivity</string>
 
 </resources>

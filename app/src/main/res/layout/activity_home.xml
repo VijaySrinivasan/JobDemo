@@ -313,9 +313,9 @@
                         android:drawableTop="@drawable/mr_ic_settings_light"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:text="Parse\nXML"
+                        android:text="BB Open\nAPI"
                         android:visibility="visible"
-                        android:onClick="formSubmission"
+                        android:onClick="show_bbOpenActivity"
                         />
                     <TextView
                         android:layout_width ="0dp"

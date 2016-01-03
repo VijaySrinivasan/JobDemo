@@ -151,6 +151,12 @@ public class HomeActivity extends AppCompatActivity{
         startActivity(nextAction);
     }
 
+    public void show_bbOpenActivity(View view) {
+        Log.d(LOGTAG,"show_bbOpenActivity starts");
+        Intent nextAction = new Intent(this,BBOpenActivity.class);
+        startActivity(nextAction);
+    }
+
     // Calls the RefreshAppsettings service to save the appsettings to SharedPreference
     public void backgroundSync(View view) {
         Log.i(LOGTAG, "calling RefreshAppsettings");

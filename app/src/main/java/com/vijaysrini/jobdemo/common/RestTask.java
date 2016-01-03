@@ -43,8 +43,9 @@ public class RestTask extends AsyncTask<URL, Integer, Object> {
 
     protected String doInBackground(URL... url) {
 
-        Log.d(TAG,"doInBackground");
+        Log.d(TAG,"doInBackground starts");
         // Get response data
+        String output = null;
         try {
             int status = connection.getResponseCode();
             if (status >= 300) {
@@ -71,8 +72,7 @@ public class RestTask extends AsyncTask<URL, Integer, Object> {
                 publishProgress((downloadedBytes * 100) / contentLength);
                 out.write(buffer, 0, read);
             }
-
-            return new String(out.toByteArray(), encoding);
+            output = new String(out.toByteArray(), encoding);
         } catch (Exception e) {
             Log.d(TAG, e.getMessage());
             return e.toString();
@@ -80,18 +80,18 @@ public class RestTask extends AsyncTask<URL, Integer, Object> {
             if (connection != null) {
                 connection.disconnect();
             }
+            Log.d(TAG,"response from service is " + output);
+            return output;
         }
     }
-/*
+
     protected void onProgressUpdate(Integer... progress) {
         //setProgressPercent(progress[0]);
     }
 
-
     @Override
     protected void onPostExecute(Object o) {
         Log.d("RestTask","onPostExecute with Object");
-
         super.onPostExecute(o);
     }
 
@@ -99,7 +99,7 @@ public class RestTask extends AsyncTask<URL, Integer, Object> {
         Log.d("RestTask","onPostExecute with Result");
         //showDialog("Downloaded " + result + " bytes");
     }
-*/
+
     public void setResponseCallback(ResponseCallback callback) {
         mResponseCallback = new WeakReference<ResponseCallback>(callback);
     }

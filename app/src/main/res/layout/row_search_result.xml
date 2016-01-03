@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@+id/name"
+            android:textSize="40px" >
+        </TextView>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@+id/price"
+            android:textSize="20px" >
+        </TextView>
+        <TextView
+            android:id="@+id/sku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@+id/sku"
+            android:textSize="20px"
+            android:visibility="gone">
+        </TextView>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/timg"
+        android:layout_width="122px"
+        android:layout_height="122px"
+        android:layout_marginLeft="4px"
+        android:layout_marginRight="10px"
+        android:layout_marginTop="4px"
+        android:src="@drawable/ic_media_play" >
+    </ImageView>
+
+
+</LinearLayout> 

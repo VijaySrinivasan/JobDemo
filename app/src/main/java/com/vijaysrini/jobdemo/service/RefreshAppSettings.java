@@ -1,13 +1,11 @@
 package com.vijaysrini.jobdemo.service;
 
-import android.app.Application;
 import android.app.IntentService;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.util.Log;
 
 import com.vijaysrini.jobdemo.R;
-import com.vijaysrini.jobdemo.common.AppSingleton;
+import com.vijaysrini.jobdemo.common.AndroidDemoApplication;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,12 +39,12 @@ public class RefreshAppSettings extends IntentService {
                     connection.setReadTimeout(10000);
                     connection.setConnectTimeout(15000);
                     connection.setDoInput(true);
-                    String appSettingsValue = downloadAppSettings(connection);
+                    String appSettingsValue = getResponse(connection);
 
                     //Now save in app context
                     try {
                         JSONObject appsettingJson =  new JSONObject(appSettingsValue);
-                        AppSingleton myapp =  (AppSingleton) getApplication();
+                        AndroidDemoApplication myapp =  (AndroidDemoApplication) getApplication();
                         myapp.setAppSettingJson(appsettingJson);
                     } catch (JSONException je) {
                         Log.d(TAG, je.getMessage());
@@ -66,8 +64,8 @@ public class RefreshAppSettings extends IntentService {
             }
         }
     }
-    private String downloadAppSettings(HttpURLConnection connection) {
-        Log.d(TAG, "downloadAppSettings starts");
+    private String getResponse(HttpURLConnection connection) {
+        Log.d(TAG, "getResponse starts");
         try {
             int status = connection.getResponseCode();
             if (status >= 300) {

@@ -27,11 +27,11 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:name=".common.AndroidDemoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:name=".common.AppSingleton">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".activity.HomeActivity"
             android:label="@string/app_name" >
@@ -51,6 +51,7 @@
             android:name=".activity.WebViewActivity"
             android:label="@string/title_activity_web_view"
             android:parentActivityName=".activity.HomeActivity" >
+
             <!-- meta data to support 4.0 and lowe -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -75,23 +76,20 @@
         <activity
             android:name=".activity.MapsActivity"
             android:label="@string/title_activity_maps"
-            android:parentActivityName=".activity.HomeActivity">
+            android:parentActivityName=".activity.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.HomeActivity" />
         </activity>
-
-
         <activity
             android:name=".activity.VoiceActivity"
             android:label="@string/title_activity_voice"
-            android:parentActivityName=".activity.HomeActivity">
+            android:parentActivityName=".activity.HomeActivity" >
         </activity>
-
         <activity
             android:name=".activity.TrialActivity"
             android:label="@string/title_activity_trial"
-            android:parentActivityName=".activity.HomeActivity">
+            android:parentActivityName=".activity.HomeActivity" >
         </activity>
         <activity
             android:name=".activity.FormSubmissionActivity"
@@ -104,7 +102,7 @@
         <activity
             android:name=".activity.DownloadActivity"
             android:label="@string/title_activity_download"
-            android:parentActivityName=".activity.HomeActivity">
+            android:parentActivityName=".activity.HomeActivity" >
         </activity>
 
         <service
@@ -115,7 +113,23 @@
             android:name=".service.RefreshAppSettings"
             android:exported="false" >
         </service>
-    </application>
 
+        <activity
+            android:name=".activity.BBOpenActivity"
+            android:label="@string/title_activity_bbopen"
+            android:parentActivityName=".activity.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vijaysrini.jobdemo.activity.HomeActivity" />
+        </activity>
+
+        <service
+            android:name=".service.MyRestIntentService"
+            android:exported="false" >
+        </service>
+
+        <!--Remember: I have defined a receiver in BBOpenActivity  -->
+
+    </application>
 
 </manifest>

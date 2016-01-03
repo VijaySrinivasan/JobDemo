@@ -11,7 +11,7 @@ import org.json.JSONObject;
 /**
  * Created by vijaysrinivasan on 12/9/15.
  */
-public class AppSingleton extends Application {
+public class AndroidDemoApplication extends Application {
 
     private JSONObject appSettingJson;
     //@TODO: You can add a timestamp variable to track when the values were last refreshed.
@@ -26,7 +26,7 @@ public class AppSingleton extends Application {
 
     @Override
     public void onCreate() {
-        Log.d("AppSingleton","Constructor starts");
+        Log.d("AndroidDemoApplication","Constructor starts");
         super.onCreate();
 
         // Get appsettings
@@ -34,9 +34,6 @@ public class AppSingleton extends Application {
         startService(refreshAppSettings);
 
         //Later -- Add methods when you need to initialize anything in the app.
-
     }
 
-
 }
-

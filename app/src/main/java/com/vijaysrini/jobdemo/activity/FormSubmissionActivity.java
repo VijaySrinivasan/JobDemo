@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vijaysrini.jobdemo.R;
-import com.vijaysrini.jobdemo.common.AppSingleton;
+import com.vijaysrini.jobdemo.common.AndroidDemoApplication;
 import com.vijaysrini.jobdemo.common.Network;
 import com.vijaysrini.jobdemo.common.RestTask;
 
@@ -28,7 +28,7 @@ public class FormSubmissionActivity extends AppCompatActivity implements RestTas
         setContentView(R.layout.activity_form_submission);
 
         //Check whether you can read from app singleton
-        AppSingleton myapp = (AppSingleton) getApplication();
+        AndroidDemoApplication myapp = (AndroidDemoApplication) getApplication();
         JSONObject settingsJson = myapp.getAppSettingJson();
         if (settingsJson != null) {
             TextView textView=  (TextView)  findViewById(R.id.textView);
@@ -40,7 +40,7 @@ public class FormSubmissionActivity extends AppCompatActivity implements RestTas
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_get_json, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -62,7 +62,9 @@ public class FormSubmissionActivity extends AppCompatActivity implements RestTas
     public void getAppSettings(View view) {
         try {
             Log.d(TAG,"Starting getAppSettings");
+
             String appsettingURL = getResources().getString(R.string.appsettings_url).toString();
+
             RestTask getAppSettingsTask = Network.obtainGetTask(appsettingURL);
             if (getAppSettingsTask != null) {
                 getAppSettingsTask.setResponseCallback(this);
