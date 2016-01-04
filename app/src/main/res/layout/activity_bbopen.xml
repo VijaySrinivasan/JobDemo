@@ -36,8 +36,6 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
                 <EditText
-                    android:imeOptions="actionSearch"
-                    android:imeActionLabel="sea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -45,6 +43,8 @@
                     android:id="@+id/searchEditText"
                     android:text="dell"
                     android:singleLine="true"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch"
                     />
                 <Button
                     android:layout_width="wrap_content"
