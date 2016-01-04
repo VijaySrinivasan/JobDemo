@@ -23,7 +23,7 @@ import android.os.RemoteException;
 import android.util.Base64;
 import android.util.Log;
 
-/**
+/** TODO: The structure of this service call is good. Need to adopt this structure for my code.
  * @class DownloadService
  *
  * @brief Downloads & stores a bitmap image on behalf of the

@@ -301,18 +301,6 @@
                         android:drawableTop="@drawable/mr_ic_settings_light"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:text="Download\nImage"
-                        android:visibility="visible"
-                        android:onClick="download"
-                        />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:minWidth="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawableTop="@drawable/mr_ic_settings_light"
-                        android:textStyle="bold"
-                        android:gravity="center"
                         android:text="BB Open\nAPI"
                         android:visibility="visible"
                         android:onClick="show_bbOpenActivity"
@@ -329,6 +317,20 @@
                         android:textAlignment="center"
                         android:onClick="getAppSettings"
                         android:id="@+id/save_in_device" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:minWidth="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/mr_ic_settings_light"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Download\nImage"
+                        android:visibility="visible"
+                        android:onClick="download"
+                        />
+
 
                 </LinearLayout>
 

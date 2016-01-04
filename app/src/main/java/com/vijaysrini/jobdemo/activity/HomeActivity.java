@@ -146,9 +146,10 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void download(View view) {
-        Log.d(LOGTAG, "download");
-        Intent nextAction = new Intent(this,DownloadActivity.class);
-        startActivity(nextAction);
+        Log.d(LOGTAG, "download: NOT IMPLEMENTED");
+        //TODO: Replace this download image functionality after analysing it.
+        // Intent nextAction = new Intent(this,DownloadActivity.class);
+        //startActivity(nextAction);
     }
 
     public void show_bbOpenActivity(View view) {

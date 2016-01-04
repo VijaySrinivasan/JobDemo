@@ -37,7 +37,7 @@ public class ProductListArrayAdapter extends ArrayAdapter <BBProduct>
 
         //Log.d("ProductListArrayAdapter", "getView starts for position " + position);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.row_search_result, parent, false);
+        View rowView = inflater.inflate(R.layout.row_bbprod_search_result, parent, false);
 
         TextView textName= (TextView) rowView.findViewById(R.id.text_bbp_name);
         TextView textPrice = (TextView) rowView.findViewById(R.id.text_bbp_price);

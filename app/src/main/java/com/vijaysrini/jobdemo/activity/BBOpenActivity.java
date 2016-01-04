@@ -13,17 +13,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import com.google.android.gms.analytics.ecommerce.Product;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import com.vijaysrini.jobdemo.R;
-import com.vijaysrini.jobdemo.common.BBProdList;
 import com.vijaysrini.jobdemo.common.BBProduct;
 import com.vijaysrini.jobdemo.common.BBProductSearchResult;
 import com.vijaysrini.jobdemo.common.Constants;
@@ -34,7 +33,6 @@ import com.vijaysrini.jobdemo.view.ProductListArrayAdapter;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class BBOpenActivity extends AppCompatActivity {
     ListView resultListView;
@@ -67,12 +65,6 @@ public class BBOpenActivity extends AppCompatActivity {
         }
     }
 
-    /*@TODO:
-        search text error msg - client side
-        Show list
-        action on list item.
-    */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -98,7 +90,7 @@ public class BBOpenActivity extends AppCompatActivity {
         productList.add(new BBProduct());
         productList.add(new BBProduct());
 
-        adapter = new ProductListArrayAdapter(this, R.layout.row_search_result,productList);
+        adapter = new ProductListArrayAdapter(this, R.layout.row_bbprod_search_result,productList);
         resultListView.setAdapter(adapter);
 
         //Add listener to the list click
@@ -106,11 +98,10 @@ public class BBOpenActivity extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Log.d(LOGTAG, "Received a tap on item # " + position);
+                        Log.d(LOGTAG, "Received a tap on " + ((TextView)view.findViewById(R.id.text_bbp_name)).getText() + " at position " + position);
                     }
                 }
         );
-
     }
 
     @Override
@@ -144,6 +135,13 @@ public class BBOpenActivity extends AppCompatActivity {
         startService(prodSearch);
         //progressDialog.show();
         //view.animate().setDuration(2000).alpha(0);//hides the button that was clicked
+        try {
+            InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        } catch (Exception e) {
+            // Keyboard was not open. Just ignore.
+            Log.d(LOGTAG,"keyboard was not open but search was called!");
+        }
 
     }
 }

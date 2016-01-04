@@ -14,14 +14,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="40px" >
+            android:textSize="40px"
+            android:imeOptions="actionNone">
         </TextView>
         <TextView
             android:id="@+id/text_bbp_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@+id/text_bbp_price"
-            android:textSize="20px" >
+            android:textSize="20px"
+            android:imeOptions="actionNone">
         </TextView>
         <TextView
             android:id="@+id/text_bbp_sku"
@@ -29,6 +31,7 @@
             android:layout_height="wrap_content"
             android:text="sku"
             android:textSize="20px"
+            android:imeOptions="actionNone"
             android:visibility="gone">
         </TextView>
 
@@ -41,7 +44,7 @@
         android:layout_marginLeft="4px"
         android:layout_marginRight="10px"
         android:layout_marginTop="4px"
-        android:src="@drawable/ic_media_play" >
+        android:src="@drawable/ic_media_play">
     </ImageView>
 
 
