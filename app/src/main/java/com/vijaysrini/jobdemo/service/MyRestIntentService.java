@@ -75,10 +75,10 @@ public class MyRestIntentService extends IntentService {
      */
     public static void startSearchProducts(Context context, String searchText) {
         Log.d(LOGTAG,"startSearchProducts starts");
-        Intent intent = new Intent(context, MyRestIntentService.class);
-        intent.setAction(Constants.ACTION_SEARCH_PRODUCTS);
-        intent.putExtra(EXTRA_SEARCH_TEXT, searchText);
-        context.startService(intent);
+        Intent restIntentService = new Intent(context, MyRestIntentService.class);
+        restIntentService.setAction(Constants.ACTION_SEARCH_PRODUCTS);
+        restIntentService.putExtra(EXTRA_SEARCH_TEXT, searchText);
+        context.startService(restIntentService);
     }
 
     /**

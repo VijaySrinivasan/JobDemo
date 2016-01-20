@@ -21,7 +21,8 @@ public class MyNotification {
 
     public static void createNotification(Activity activity, String text, String subText) {
         Log.i("MyNotification","creating notification");
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://docs.android.com/"));
+        //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://docs.android.com/"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("jobdemo://BBActivity"));
         PendingIntent pendingIntent =  PendingIntent.getActivity(activity,0,intent,0);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(activity);
         builder

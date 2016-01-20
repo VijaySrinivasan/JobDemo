@@ -121,14 +121,20 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.vijaysrini.jobdemo.activity.HomeActivity" />
+            <intent-filter android:label="deeplink">
+                <action android:name="ANDROID.INTENT.ACTION.VIEW"/>
+                <category android:name="ANDROID.INTENT.CATEGORY.DEFAULT"/>
+                <category android:name="ANDROID.INTENT.CATEGORY.BROWSABLE"/>
+                <data
+                    android:scheme="jobdemo"
+                    android:host="BBActivity" />
+            </intent-filter>
         </activity>
 
         <service
             android:name=".service.MyRestIntentService"
             android:exported="false" >
         </service>
-
-        <!--Remember: I have defined a receiver in BBOpenActivity  -->
 
     </application>
 
