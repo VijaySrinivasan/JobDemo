@@ -11,6 +11,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.vijaysrini.jobdemo.R;
+import com.vijaysrini.jobdemo.activity.BBOpenActivity;
 
 /**
  * Created by vijaysrinivasan on 10/1/15.
@@ -22,7 +23,8 @@ public class MyNotificationManager {
     public static void createNotification(Activity callingActivity, String text, String subText) {
         Log.i("MyNotificationManager","creating notification");
         //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://docs.android.com/"));
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("jobdemo://BBActivity"));
+        //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("jobdemo://BBActivity"));
+        Intent intent = new Intent(callingActivity,BBOpenActivity.class);
         PendingIntent pendingIntent =  PendingIntent.getActivity(callingActivity,0,intent,0);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(callingActivity);
         builder
