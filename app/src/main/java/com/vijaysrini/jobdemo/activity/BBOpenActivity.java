@@ -25,7 +25,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import com.vijaysrini.jobdemo.R;
-import com.vijaysrini.jobdemo.common.BBProduct;
+import com.vijaysrini.jobdemo.common.Analytics;
+import com.vijaysrini.jobdemo.model.BBProduct;
 import com.vijaysrini.jobdemo.common.BBProductSearchResult;
 import com.vijaysrini.jobdemo.common.Constants;
 import com.vijaysrini.jobdemo.common.Utility;
@@ -71,6 +72,8 @@ public class BBOpenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        Analytics.generateScreenOpenAWSAnalyticsEvent("Product Search");
+
         setContentView(R.layout.activity_bbopen);
         setTitle("Demo for product browsing");
         searchEditText = (EditText) findViewById(R.id.searchEditText);

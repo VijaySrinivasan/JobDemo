@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.vijaysrini.jobdemo.R;
+import com.vijaysrini.jobdemo.common.Analytics;
 import com.vijaysrini.jobdemo.common.MyNotification;
 import com.vijaysrini.jobdemo.service.RefreshAppSettings;
 
@@ -29,14 +30,16 @@ public class HomeActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(LOGTAG, "onCreate starts");
+
+
         setContentView(R.layout.activity_home);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         sec1Layout = (LinearLayout) findViewById(R.id.sec1_buttons_area);
         pref_sec1_show  = getString(R.string.pref_sec1_show);
         prefFile = getString(R.string.preference_key_file);
         preferences = getSharedPreferences(prefFile, Context.MODE_PRIVATE);
         showSec1 = preferences.getString(pref_sec1_show, "default");
-
         if (showSec1.compareTo("no") == 0) sec1Layout.setVisibility(View.GONE);
         else sec1Layout.setVisibility(View.VISIBLE);
 
@@ -100,6 +103,7 @@ public class HomeActivity extends AppCompatActivity{
 
     public void showMobileWebInvesting(View view) {
         Log.i(LOGTAG, "Showing MobileWebHome on icon tap");
+
         Intent nextAction = new Intent(this,WebViewActivity.class);
         nextAction.putExtra("url",getResources().getString(R.string.cb_web_invest_url).toString());
         startActivity(nextAction);
@@ -123,9 +127,10 @@ public class HomeActivity extends AppCompatActivity{
 
     public void createNotification(View view) {
         Log.i("MyNotification","calling MyNotification class");
-        MyNotification.createNotification(this, "text et al", "subtext et al");
+        MyNotification.createNotification(this, "Time to record clinical result.", "1 day left");
         Log.i("MyNotification", "done calling MyNotification");
     }
+
     public void showInMap (View view) {
         Log.i(LOGTAG, "Starting showInMap");
         Intent nextAction = new Intent(this,MapsActivity.class);
@@ -153,7 +158,7 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void show_bbOpenActivity(View view) {
-        Log.d(LOGTAG,"show_bbOpenActivity starts");
+        Log.d(LOGTAG, "show_bbOpenActivity starts");
         Intent nextAction = new Intent(this,BBOpenActivity.class);
         startActivity(nextAction);
     }

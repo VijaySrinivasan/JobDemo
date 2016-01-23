@@ -28,8 +28,8 @@ public class MyNotification {
         builder
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
-                .setSmallIcon(R.drawable.ic_cast_on_1_light)
-                .setContentTitle(Constants.APP_TITLE)
+                .setSmallIcon(R.mipmap.android_icon_cc)
+                .setContentTitle(Constants.DEMO_TITLE)
                 .setContentText(text)
                 .setSubText(subText)
                 .setDefaults(Notification.DEFAULT_SOUND)

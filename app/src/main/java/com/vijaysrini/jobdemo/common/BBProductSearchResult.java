@@ -1,7 +1,8 @@
 package com.vijaysrini.jobdemo.common;
 
+import com.vijaysrini.jobdemo.model.BBProduct;
+
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by vijaysrinivasan on 1/2/16.

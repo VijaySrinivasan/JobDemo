@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.vijaysrini.jobdemo.R;
+import com.vijaysrini.jobdemo.common.Analytics;
 import com.vijaysrini.jobdemo.service.DownloadService;
 
 /**
@@ -33,7 +34,7 @@ public class DownloadActivity extends Activity {
 
     private EditText mUrlEditText; //User's selection of URL to download
     private ImageView mImageView; //Image that's been downloaded
-    private String mDefaultUrl = "http://www.dre.vanderbilt.edu/~schmidt/ka.png"; //Default URL.
+    private String mDefaultUrl = "http://www.plus.google.com/vijaysrinivasan/profile/photo.png"; //Default URL.
     private ProgressDialog mProgressDialog; //Display progress of download
 
     //uses its handleMessage() hook method to process messages sent to it from the DownloadService.
@@ -42,6 +43,8 @@ public class DownloadActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Analytics.generateScreenOpenAWSAnalyticsEvent("Download Image");
+
         setContentView(R.layout.activity_download_image);
         mUrlEditText = (EditText) findViewById(R.id.mUrlEditText);
         mImageView = (ImageView) findViewById(R.id.mImageView);

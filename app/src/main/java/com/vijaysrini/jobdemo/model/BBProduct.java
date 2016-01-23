@@ -1,4 +1,4 @@
-package com.vijaysrini.jobdemo.common;
+package com.vijaysrini.jobdemo.model;
 
 /**
  * Created by vijaysrinivasan on 1/2/16.

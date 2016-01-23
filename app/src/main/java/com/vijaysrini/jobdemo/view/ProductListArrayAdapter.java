@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.vijaysrini.jobdemo.R;
-import com.vijaysrini.jobdemo.common.BBProduct;
+import com.vijaysrini.jobdemo.model.BBProduct;
 
 import java.util.ArrayList;
 

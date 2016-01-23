@@ -4,16 +4,19 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.amazonaws.mobileconnectors.amazonmobileanalytics.AnalyticsEvent;
+import com.amazonaws.mobileconnectors.amazonmobileanalytics.EventClient;
+import com.vijaysrini.jobdemo.aws.AWSMobileClient;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -32,7 +35,6 @@ public class Utility {
                 connection.setConnectTimeout(Constants.CONNECTION_TIMEOUT);
                 connection.setReadTimeout(Constants.CONN_READ_TIMEOUT);
                 connection.setDoInput(true);
-
             }
         } catch (IOException ioException) {
             Log.e(LOGTAG, ioException.getMessage());

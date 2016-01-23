@@ -1,4 +1,6 @@
-package com.vijaysrini.jobdemo.common;
+package com.vijaysrini.jobdemo.model;
+
+import com.vijaysrini.jobdemo.model.BBProduct;
 
 import java.util.ArrayList;
 

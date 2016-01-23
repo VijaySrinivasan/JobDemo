@@ -8,6 +8,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.vijaysrini.jobdemo.R;
+import com.vijaysrini.jobdemo.common.Analytics;
 
 import java.io.IOException;
 
@@ -20,6 +21,7 @@ public class MapsActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
+        Analytics.generateScreenOpenAWSAnalyticsEvent("Home");
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.vijaysrini.jobdemo.common;
 
+import com.amazonaws.regions.Regions;
+
 import java.security.PublicKey;
 
 /**
@@ -7,6 +9,8 @@ import java.security.PublicKey;
  */
 public class Constants {
     public static final String APP_TITLE = "Job Demo";
+    public static final String DEMO_TITLE = "Clinical Ink Demo";
+
     public static final String BUGZILLA_HOST = "bugzilla.mozilla.org";
     public static final String BUGZ_COMMENT_ = "/rest/bug/35/comment";
 
@@ -19,9 +23,12 @@ public class Constants {
     public static final String SEARCH_PRODUCTS_RESULT = "com.vijaysrini.jobdemo.service.SEARCH_PRODUCTS_RESULT";
     public static final String PRODUCTS_RESULT_PROD_TAG = "products";
 
-
-
     public static final int CONNECTION_TIMEOUT = 15000;
     public static final int CONN_READ_TIMEOUT = 10000;
+
+    public static final String  AMAZON_MOBILE_ANALYTICS_APP_ID = "55acd80af534439eba5aa70783e1eda6";
+    public static final Regions AMAZON_MOBILE_ANALYTICS_REGION = Regions.US_EAST_1;
+
+    public static final String EVENT_SCREEN_OPEN = "ScreenOpened";
 
 }

@@ -13,7 +13,11 @@ import android.webkit.WebViewClient;
 import android.widget.AutoCompleteTextView;
 
 import com.vijaysrini.jobdemo.R;
+import com.vijaysrini.jobdemo.common.Analytics;
 import com.vijaysrini.jobdemo.common.WebAppInterface;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class WebViewActivity extends AppCompatActivity {
@@ -27,7 +31,7 @@ public class WebViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_web_view);
 
         webView = (WebView) findViewById(R.id.webView);
-        webView.addJavascriptInterface(new WebAppInterface(this),"Android");
+        webView.addJavascriptInterface(new WebAppInterface(this), "Android");
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -36,8 +40,13 @@ public class WebViewActivity extends AppCompatActivity {
         webSettings.setUserAgentString("my-user-agent");
 
         webView.setWebViewClient(new WebViewClient());
-        Log.i("Webview onCreate", "url is " + getIntent().getStringExtra("url"));
-        webView.loadUrl(getIntent().getStringExtra("url"));
+        String url = getIntent().getStringExtra("url");
+        Log.i("Webview onCreate", "url is " + url);
+        webView.loadUrl(url);
+
+        Map attibutes = new HashMap<String,String>();
+        attibutes.put("URL",url);
+        Analytics.generateAWSAnalyticsEvent("Web Module",attibutes);
     }
 
 
