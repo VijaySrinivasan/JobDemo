@@ -1,7 +1,18 @@
 <resources>
     <string name="app_name">Vijay\'s Android Demo</string>
     <string name="demo_name">Clinical Ink Demo</string>
-    <string name="purpose">The purpose of this app is to give myself some technical exercise! This app was not created to solve a business problem.</string>
+    <string name="purpose">The purpose of this app is to demonstrate that I can develop various features on Android ! \nDont expect it to be perfect yet; I get only 4 hours a week for this !</string>
+    <string name="purpose2">
+        * Customization for tablets\n
+        * Deep linking from a notification\n
+        * Fix for default results in product search\n
+        * Add product details page\n
+        * Browse category\n
+        * Spinners during asynchrous calls\n
+        * Google authentication\n
+        * Pancake menu\n
+        * Slide navigator.
+    </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_web_view">WebViewActivity</string>
     <string name="title_activity_my_locator">MyLocatorActivity</string>

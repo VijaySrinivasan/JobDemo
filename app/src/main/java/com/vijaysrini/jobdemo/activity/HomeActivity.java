@@ -12,8 +12,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.vijaysrini.jobdemo.R;
-import com.vijaysrini.jobdemo.common.Analytics;
-import com.vijaysrini.jobdemo.common.MyNotification;
+import com.vijaysrini.jobdemo.common.MyNotificationManager;
 import com.vijaysrini.jobdemo.service.RefreshAppSettings;
 
 public class HomeActivity extends AppCompatActivity{
@@ -126,9 +125,9 @@ public class HomeActivity extends AppCompatActivity{
     // SECTION : Map, Notification, voice
 
     public void createNotification(View view) {
-        Log.i("MyNotification","calling MyNotification class");
-        MyNotification.createNotification(this, "Time to record clinical result.", "1 day left");
-        Log.i("MyNotification", "done calling MyNotification");
+        Log.i("MyNotificationManager","calling MyNotificationManager class");
+        MyNotificationManager.createNotification(this, "Time to record clinical result.", "1 day left");
+        Log.i("MyNotificationManager", "done calling MyNotificationManager");
     }
 
     public void showInMap (View view) {

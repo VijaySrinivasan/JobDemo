@@ -15,28 +15,28 @@ import com.vijaysrini.jobdemo.R;
 /**
  * Created by vijaysrinivasan on 10/1/15.
  */
-public class MyNotification {
+public class MyNotificationManager {
 
     public static final int NOTIFICATION_ID = 1;
 
-    public static void createNotification(Activity activity, String text, String subText) {
-        Log.i("MyNotification","creating notification");
+    public static void createNotification(Activity callingActivity, String text, String subText) {
+        Log.i("MyNotificationManager","creating notification");
         //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://docs.android.com/"));
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("jobdemo://BBActivity"));
-        PendingIntent pendingIntent =  PendingIntent.getActivity(activity,0,intent,0);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(activity);
+        PendingIntent pendingIntent =  PendingIntent.getActivity(callingActivity,0,intent,0);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(callingActivity);
         builder
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
                 .setSmallIcon(R.mipmap.android_icon_cc)
-                .setContentTitle(Constants.DEMO_TITLE)
+                .setContentTitle(callingActivity.getResources().getString(R.string.demo_name))
                 .setContentText(text)
                 .setSubText(subText)
                 .setDefaults(Notification.DEFAULT_SOUND)
         ;
 
-        NotificationManager notificationManager = (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager) callingActivity.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(NOTIFICATION_ID,builder.build());
-        Log.i("MyNotification","done attempting creating notification");
+        Log.i("MyNotificationManager","done attempting creating notification");
     }
 }

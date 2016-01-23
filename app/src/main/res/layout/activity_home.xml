@@ -41,7 +41,7 @@
                     android:paddingTop="5dp"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    android:text="Services"/>
+                    android:text="Purpose"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -74,16 +74,8 @@
                     android:drawablePadding="10dp"
                     android:gravity="center_vertical"
                     android:paddingLeft="5dp"
-                    android:text="Start / stop service to monitor power supply"
+                    android:text="@string/purpose"
                     android:textSize="15sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/mr_ic_play_light" />
             </LinearLayout>
 
             <!-- section 2 start -->
@@ -339,6 +331,11 @@
         </LinearLayout>
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\nHere\'s a list of things that are taking shape:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+        <TextView
             android:id="@+id/hs_helpfulHints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -348,8 +345,8 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="15dp"
-            android:text="@string/purpose" />
-
+            android:text="@string/purpose2"
+            android:drawableRight="@drawable/lightbulb"/>
     </LinearLayout>
         <!-- All sections are over. Text to show app purpose. -->
 
