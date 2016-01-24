@@ -65,7 +65,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
-        populateAutoComplete();
+        populateAutoComplete();//@TODO Need to explore this part - Loader.
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -273,7 +273,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
             try {
                 // Simulate network access.
-                Thread.sleep(2000);
+                Thread.sleep(4000);
             } catch (InterruptedException e) {
                 return false;
             }
