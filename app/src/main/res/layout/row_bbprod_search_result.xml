@@ -21,15 +21,16 @@
             android:id="@+id/text_bbp_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@+id/text_bbp_price"
-            android:textSize="20px"
+            android:text=""
+            android:textSize="30px"
+            android:textColor="@color/olive_green"
             android:imeOptions="actionNone">
         </TextView>
         <TextView
             android:id="@+id/text_bbp_sku"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sku"
+            android:text=""
             android:textSize="20px"
             android:imeOptions="actionNone"
             android:visibility="gone">

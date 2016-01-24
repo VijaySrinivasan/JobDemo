@@ -41,7 +41,7 @@
                     android:layout_weight="1"
                     android:hint="Enter product name"
                     android:id="@+id/searchEditText"
-                    android:text="dell"
+                    android:text="dell laptop"
                     android:singleLine="true"
                     android:inputType="text"
                     android:imeOptions="actionSearch"
@@ -65,12 +65,14 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
                 <TextView
+                    android:id="@+id/search_header"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="Search Results:"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:background="@color/app_background"
+                    android:visibility="invisible"
                     />
                 <ListView
                     android:layout_width="fill_parent"

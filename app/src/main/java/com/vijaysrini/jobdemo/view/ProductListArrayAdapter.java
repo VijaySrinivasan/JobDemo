@@ -45,7 +45,7 @@ public class ProductListArrayAdapter extends ArrayAdapter <BBProduct>
         ImageView imageThumbnail = (ImageView) rowView.findViewById(R.id.icon);
 
         textName.setText((searchResult.get(position)).getName()) ;
-        textPrice.setText (Float.toString((searchResult.get(position)).getPrice()) ) ;
+        textPrice.setText ("$ " + Float.toString((searchResult.get(position)).getSalePrice()) ) ;
         //imageThumbnail.setImageResource(R.drawable.cast_ic_notification_2);
         textSku.setText((searchResult.get(0)).getSku()) ;
 

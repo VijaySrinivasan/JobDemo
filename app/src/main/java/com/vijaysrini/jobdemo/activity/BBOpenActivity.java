@@ -41,6 +41,7 @@ public class BBOpenActivity extends AppCompatActivity {
     ListView resultListView;
     ProgressDialog progressDialog;
     EditText searchEditText;
+    TextView searchHeader ;
     String LOGTAG = "BBOpenActivity";
     MyReceiver myReceiver = new MyReceiver();
     ArrayList<BBProduct> productList = new ArrayList<BBProduct>();
@@ -60,7 +61,9 @@ public class BBOpenActivity extends AppCompatActivity {
             GsonBuilder gsonBuilder = new GsonBuilder();
             Gson gson = gsonBuilder.create();
             searchResult = gson.fromJson(response, BBProductSearchResult.class);
-            Log.i(LOGTAG, "SUCCESS converting result to java. Search result has " + searchResult.productCount() + " items.");
+            int searchResultCount =searchResult.productCount();
+            Log.i(LOGTAG, "SUCCESS converting result to java. Search result has " + searchResultCount + " items.");
+
             productList = searchResult.getProducts();
             adapter.clear();
             adapter.addAll(productList);
@@ -78,9 +81,11 @@ public class BBOpenActivity extends AppCompatActivity {
         setTitle("Demo for product browsing");
         searchEditText = (EditText) findViewById(R.id.searchEditText);
         resultListView = (ListView) findViewById(R.id.bb_prod_list);
+        searchHeader = (TextView) findViewById(R.id.search_header);
+        searchHeader.setVisibility(View.VISIBLE);
         progressDialog = new ProgressDialog(this);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressDialog.setTitle("Android Demo");
+        progressDialog.setTitle("Fetching results...");
 
         //Register an intent filter for receiving product search response.
         IntentFilter prodSearchResponseFilter = new IntentFilter (Constants.BROADCAST_SEARCH_PRODUCTS);
@@ -92,8 +97,8 @@ public class BBOpenActivity extends AppCompatActivity {
         Log.d(LOGTAG, "Registered a receiver for product search");
 
         // Now take care of the listview.
-        productList.add(new BBProduct());
-        productList.add(new BBProduct());
+        //productList.add(new BBProduct());
+        //productList.add(new BBProduct());
 
         adapter = new ProductListArrayAdapter(this, R.layout.row_bbprod_search_result,productList);
         resultListView.setAdapter(adapter);
@@ -149,8 +154,7 @@ public class BBOpenActivity extends AppCompatActivity {
         prodSearch.setData(Uri.parse(searchEditText.getText().toString()));
         prodSearch.setAction(Constants.ACTION_SEARCH_PRODUCTS);
         startService(prodSearch);
-        //progressDialog.show();
-        //view.animate().setDuration(2000).alpha(0);//hides the button that was clicked
+        progressDialog.show();
         try {
             InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);

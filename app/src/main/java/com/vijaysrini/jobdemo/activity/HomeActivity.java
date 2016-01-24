@@ -156,8 +156,8 @@ public class HomeActivity extends AppCompatActivity{
         //startActivity(nextAction);
     }
 
-    public void show_bbOpenActivity(View view) {
-        Log.d(LOGTAG, "show_bbOpenActivity starts");
+    public void search_products(View view) {
+        Log.d(LOGTAG, "search_products starts");
         Intent nextAction = new Intent(this,BBOpenActivity.class);
         startActivity(nextAction);
     }

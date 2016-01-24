@@ -1,5 +1,7 @@
 package com.vijaysrini.jobdemo.activity;
 
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AutoCompleteTextView;
+import android.widget.ProgressBar;
+import android.widget.Spinner;
 
 import com.vijaysrini.jobdemo.R;
 import com.vijaysrini.jobdemo.common.Analytics;
@@ -39,11 +43,31 @@ public class WebViewActivity extends AppCompatActivity {
         webSettings.setUseWideViewPort(true);
         webSettings.setUserAgentString("my-user-agent");
 
-        webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new WebViewClient() {
+            ProgressDialog pd;
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                pd = ProgressDialog.show(WebViewActivity.this, null, "Loading, please wait...");
+                pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                pd.show();
+                super.onPageStarted(view, url, favicon);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                pd.dismiss();
+                super.onPageFinished(view, url);
+            }
+        });
         String url = getIntent().getStringExtra("url");
         Log.i("Webview onCreate", "url is " + url);
+
         webView.loadUrl(url);
 
+        Log.i("Webview onCreate", "cancelled the progress dialog");
+
+        // Trigger an analytics event
         Map attibutes = new HashMap<String,String>();
         attibutes.put("URL",url);
         Analytics.generateAWSAnalyticsEvent("Web Module",attibutes);
@@ -68,13 +92,6 @@ public class WebViewActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void loadUrl (View v){
-        Log.i("Load", "Loading url " + urlText.getText().toString());
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(getApplicationContext().INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromInputMethod(v.getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
-        webView.loadUrl(urlText.getText().toString());
     }
 
 }

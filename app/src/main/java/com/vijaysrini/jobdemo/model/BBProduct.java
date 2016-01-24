@@ -6,31 +6,31 @@ package com.vijaysrini.jobdemo.model;
 public class BBProduct {
 
     String name;
-    float price;
+    float salePrice;
     String sku;
-    String thumbnailUrl;
+    String thumbnailImage;
 
     // This default constructor is used for testing purpose.
     public BBProduct() {
         name = "New House 1";
-        price = (float) 40;
+        salePrice = (float) 40;
         sku = "testsku";
-        thumbnailUrl = "http://images.bestbuy.com/BestBuy_US/images/products/4144/4144946_s.gif";
+        thumbnailImage = "http://images.bestbuy.com/BestBuy_US/images/products/4144/4144946_s.gif";
     }
 
-    public BBProduct(String name, float price, String sku, String thumbnailUrl) {
+    public BBProduct(String name, float salePrice, String sku, String thumbnailImage) {
         this.name = name;
-        this.price = price;
+        this.salePrice = salePrice;
         this.sku = sku;
-        this.thumbnailUrl = thumbnailUrl;
+        this.thumbnailImage = thumbnailImage;
     }
 
-    public float getPrice() {
-        return price;
+    public float getSalePrice() {
+        return salePrice;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public void setSalePrice(float salePrice) {
+        this.salePrice = salePrice;
     }
 
     public String getSku() {
@@ -41,12 +41,12 @@ public class BBProduct {
         this.sku = sku;
     }
 
-    public String getThumbnailUrl() {
-        return thumbnailUrl;
+    public String getThumbnailImage() {
+        return thumbnailImage;
     }
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public void setThumbnailImage(String thumbnailImage) {
+        this.thumbnailImage = thumbnailImage;
     }
 
     public String getName() {
@@ -61,7 +61,7 @@ public class BBProduct {
     public String toString() {
         return "BBProduct{" +
                 "name='" + name + '\'' +
-                ", price=" + price +
+                ", salePrice=" + salePrice +
                 ", sku='" + sku + '\'' +
                 '}';
     }
