@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content" android:hint="@string/prompt_email"
                 android:inputType="textEmailAddress" android:maxLines="1"
                 android:singleLine="true"
-                android:text="foo@example.com"/>
+                android:text="jay@ClinicalInk.com"/>
 
             <EditText android:id="@+id/password" android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:hint="@string/prompt_password"
@@ -30,7 +30,7 @@
                 android:imeActionLabel="@string/action_sign_in"
                 android:imeOptions="actionUnspecified" android:inputType="textPassword"
                 android:maxLines="1" android:singleLine="true"
-                android:text="hello"/>
+                android:text="craig"/>
 
             <LinearLayout android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -44,7 +44,7 @@
 
                 <Button android:id="@+id/register_button" style="?android:textAppearanceSmall"
                     android:layout_width="100dp" android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp" android:text="@string/action_register"
+                    android:layout_marginTop="16dp" android:text="Register"
                     android:textStyle="bold" />
 
             </LinearLayout>
