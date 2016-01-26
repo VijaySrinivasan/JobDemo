@@ -3,12 +3,12 @@
     <string name="demo_name">Clinical Ink Demo</string>
     <string name="purpose">The purpose of this app is to demonstrate that I can develop various features on Android ! \nDont expect it to be perfect yet; I get only 4 hours a week for this !</string>
     <string name="purpose2">
-        * Google authentication\n
         * Pancake menu\n
         * Slide navigator.
-        * Customization for tablets\n
         * Add product details page\n
+        * Customization for tablets\n
         * Browse category\n
+        * Google authentication\n
     </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_web_view">WebViewActivity</string>
