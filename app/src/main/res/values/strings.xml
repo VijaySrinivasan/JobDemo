@@ -1,13 +1,14 @@
 <resources>
     <string name="app_name">Vijay\'s Android Demo</string>
-    <string name="demo_name">Clinical Ink Demo</string>
+    <string name="demo_name">Project Next Step</string>
     <string name="purpose">The purpose of this app is to demonstrate that I can develop various features on Android ! \nDont expect it to be perfect yet; I get only 4 hours a week for this !</string>
     <string name="purpose2">
         * Pancake menu\n
         * Slide navigator.
-        * Add product details page\n
+        * Toolbar class implementation
         * Customization for tablets\n
-        * Browse category\n
+        * Add product details page\n
+        * Browse product category\n
         * Google authentication\n
     </string>
     <string name="action_settings">Settings</string>
@@ -32,7 +33,7 @@
     <string name="myangular_example_url">http://run.plnkr.co/plunks/ss2K0CaLWUHAuberhNpH/##userDetails</string>
     <string name="title_activity_get_json">GetJsonActivity</string>
 
-    <string name="appsettings_url">https://jsonblob.com/api/jsonBlob/56102fbae4b01190df3a816e</string>
+    <string name="appsettings_url">http://jsonblob.com/57321f46e4b01190df64421a</string>
 
 
 
